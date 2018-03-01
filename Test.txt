@@ -1,0 +1,4 @@
+Score: 15 Time: 00:26[0;32;49m Name: Jordan Morris[0m
+Score:  2 Time: 00:06[0;32;49m Name: blah blah[0m
+Score: 10 Time: 00:13[0;32;49m Name: Craig[0m
+Score:  7 Time: 00:12[0;32;49m Name: Test Test[0m

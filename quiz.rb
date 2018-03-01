@@ -1,13 +1,12 @@
-require 'colorize' ##Import colour gem
+#Import dependencies
+require 'colorize'
 require 'os'
 require 'win32/sound'
 require 'terminal-table'
-
 require_relative 'classes.rb'
-
 include Win32
 
-##Create questions
+#Create questions
 question1 = Question.new(1, "In what year was Ruby first released?",
 "(A) 1992 \n(B) 1995 \n(C) 2002 \n(D) 2005",
 "B", "Correct answer is B. Ruby was first released in 1995.")
@@ -54,7 +53,7 @@ question15 = Question.new(15, "Which of the following provides 5 squared?",
 "(A) 5 * 2 \n(B) 5 ** 5  \n(C) five.square  \n(D) 5 ** 2",
 "D", "Correct answer is D. ** symbolised to the power of. ** 2 means squared.")
 
-##CREATE TITLE
+#Create a title - (put in a class maybe?)
 rows = []
 rows << ["This quiz will test your knowledge on Ruby. It is 15 multiple choice questions.".center(100).blue ]
 rows << ["Please enter a letter to answer each question. You will be timed.".center(100).blue]
@@ -65,12 +64,14 @@ table = Terminal::Table.new :title => 'WELCOME TO RUBY TESTER'.blue, :rows => ro
 questionarray =[]
 questionarray << question1 << question2 << question3 << question4 << question5 << question6 << question7 << question8 << question9 << question10 << question11 << question12 << question13 << question14 << question15
 
-##Create a score and make it zero
+##Declaring global variables (dooodgy section)
 $score = 0
 $time_one = 0
+$name = "No Name Entered"
 
-#RUN GAME
+#Run game
 run = Game.new
 run.begin(table)
 run.main(questionarray)
-run.end
+run.ending
+run.leaderboard
