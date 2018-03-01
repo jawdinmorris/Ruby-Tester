@@ -1,6 +1,7 @@
 require 'colorize' ##Import colour gem
 require 'os'
 require 'win32/sound'
+require 'terminal-table'
 include Win32
 
 $score = 0 ##Create a score and make it zero
@@ -83,8 +84,17 @@ questionarray =[] ##Create an array
 questionarray << question1 << question2 << question3 << question4 << question5 << question6 << question7 << question8 << question9 << question10 << question11 << question12 << question13 << question14 << question15
 
 time_one = Time.now ##grab starting time
-puts "Welcome to the quiz. Respond by choosing a letter."
-puts ""
+
+##CREATE TITLE
+rows = []
+rows << ["This quiz will test your knowledge on Ruby. It is 15 multiple choice questions.".center(100).blue ]
+rows << ["Please enter a letter to answer each question. You will be timed.".center(100).blue]
+rows << ["Good luck!".center(100).blue ]
+table = Terminal::Table.new :title => 'WELCOME TO RUBY TESTER'.blue, :rows => rows
+puts table
+
+
+
 ##Loop through each question in the array
 questionarray.each do |question|
   question.ask ##ask the question
@@ -93,11 +103,11 @@ end
 time_two = Time.now ##grab finishing time
 
 elapsed = time_two - time_one ##figure time elapsed
-elapsed = "%0.2f" % elapsed ##format time to 2 decimal places
+
 ##after all questions asked display score
 puts ""
-puts "Congratulations you scored #{$score} points out of 15 and you took #{elapsed} seconds."
-
+puts "Congratulations you scored #{$score} points out of 15."
+puts "Time taken: #{Time.at(elapsed).utc.strftime("%M:%S")}"
 if OS.windows?
   Sound.play("/applause.wav")
 elsif OS.mac?
