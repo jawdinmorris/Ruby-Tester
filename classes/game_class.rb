@@ -40,20 +40,19 @@ class Game
     elsif OS.mac?
       pid = fork{ exec 'afplay', "applause.wav"}
     end
-
   end
 
   #Create a leaderboard
   def leaderboard
     #Add score to leaderboard regardless
-    File.open("Test.txt", "a") do |line|
+    File.open("leaderboard.txt", "a") do |line|
       line.puts "Score: #{$display_score}" << " Time: #{Time.at($elapsed).utc.strftime("%M:%S")}" << " Name: #{$name}".green
     end
     puts "Would you like to see the leaderboard? Y/N"
     #Sort the file alphabetically in reverse
     if gets.chomp.upcase == "Y"
       puts ""
-      sorted_file = [File.readlines('test.txt').sort.reverse]
+      sorted_file = [File.readlines('leaderboard.txt').sort.reverse]
       puts sorted_file
       puts ""
     end
