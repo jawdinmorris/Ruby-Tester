@@ -3,7 +3,8 @@ require 'colorize'
 require 'os'
 require 'win32/sound'
 require 'terminal-table'
-require_relative 'classes.rb'
+require_relative 'classes/question_class.rb'
+require_relative 'classes/game_class.rb'
 include Win32
 
 #Create questions
