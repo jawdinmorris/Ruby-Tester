@@ -38,7 +38,7 @@ class Game
     if OS.windows?
       Sound.play("resources/applause.wav")
     elsif OS.mac?
-      pid = fork{ exec 'afplay', "applause.wav"}
+      pid = fork{ exec 'afplay', "resources/applause.wav"}
     end
   end
 

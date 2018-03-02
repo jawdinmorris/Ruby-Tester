@@ -1,11 +1,14 @@
 #Import dependencies
 require 'colorize'
 require 'os'
+if OS.windows?
 require 'win32/sound'
+include Win32
+end
 require 'terminal-table'
 require_relative 'classes/question_class.rb'
 require_relative 'classes/game_class.rb'
-include Win32
+
 
 #Create questions
 question1 = Question.new(1, "In what year was Ruby first released?",
