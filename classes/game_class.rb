@@ -5,7 +5,7 @@ class Game
     puts table
     puts "What is your name?"
     $name = gets.chomp.to_s
-    puts "Press any button to start.."
+    puts "Press Enter to start."
     gets
     $time_one = Time.now
   end
@@ -25,7 +25,7 @@ class Game
     puts "Congratulations you scored #{$score} points out of 15."
     puts "Time taken: #{Time.at($elapsed).utc.strftime("%M:%S")}"
     if $score < 5
-      puts "You haven't done well, keep trying!".red
+      puts "You haven't done well, keep trying!"
       $display_score = '%2d' % $score
      elsif $score < 10
        puts "Good work, keep improving!".yellow
@@ -57,7 +57,7 @@ class Game
       puts ""
     end
     ##Do you wish to leave?
-    puts "Press any key to exit."
+    puts "Press enter to exit."
     gets
   end
 end

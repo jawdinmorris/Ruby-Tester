@@ -20,7 +20,7 @@ class Question
       puts "Correct".green ##Congrats!
       $score = $score + 1 ##Add one
     else
-      puts "Incorrect".red ##Booo
+      puts "Incorrect".yellow##Booo
       puts "#{explain}".green
     end
   end

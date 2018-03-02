@@ -54,14 +54,14 @@ question15 = Question.new(15, "Which of the following provides 5 squared?",
 "(A) 5 * 2 \n(B) 5 ** 5  \n(C) five.square  \n(D) 5 ** 2",
 "D", "Correct answer is D. ** symbolised to the power of. ** 2 means squared.")
 
-#Create a title - (put in a class maybe?)
+#Create a title
 rows = []
-rows << ["This quiz will test your knowledge on Ruby. It is 15 multiple choice questions.".center(100).blue ]
-rows << ["Please enter a letter to answer each question. You will be timed.".center(100).blue]
-rows << ["Good luck!".center(100).blue ]
-table = Terminal::Table.new :title => 'WELCOME TO RUBY TESTER'.blue, :rows => rows
+rows << ["This quiz will test your knowledge on Ruby. It is 15 multiple choice questions.".center(100) ]
+rows << ["Please enter a letter to answer each question. You will be timed.".center(100)]
+rows << ["Good luck!".center(100)]
+table = Terminal::Table.new :title => 'WELCOME TO RUBY TESTER', :rows => rows
 
-##Collate Questions
+##Collate questions into array
 questionarray =[]
 questionarray << question1 << question2 << question3 << question4 << question5 << question6 << question7 << question8 << question9 << question10 << question11 << question12 << question13 << question14 << question15
 
